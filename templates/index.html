@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block cssfile %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+{% endblock cssfile %}
+
+{% block title %}
+<title>Hello - {{name}}</title>
+{% endblock title %}
+
+{% block body %}
+{% for message in get_flashed_messages() %}
+    <p>{{message}}</p>
+    {% endfor %}
+{% endblock body %}
